@@ -52,14 +52,32 @@ After iteratively attempting to increase the scores for the models, the analysis
 
 The early stages of this analysis when visualizing the data before modeling, show that there is in fact some sort of identifiable racial disparity in the Terry Stop data. 
 
-![](./img/price_distribution.png)
+![](./img/1-graph_arrests_race.PNG)
 
-Howver, the initial target variable, 'Physical_Arrest', was challenging for the classification algorithms to predict with much efficiency. Nonetheless, futher steps were taken to improve these models, by attempting to tune their hyperparamaters.
+![](./img/2-graph_legal_race.PNG)
+
+Once Modeling began, howver, the initial target variable, 'Physical_Arrest', was challenging for the classification algorithms to predict with much efficiency. Nonetheless, futher steps were taken to improve these models, by attempting to tune their hyperparamaters.
+
+Baseline Logistic Regression Model (after using SMOTE for synthetic data):
+![](./img/3-conf_baseline_logreg_smote.PNG)
+
+Best Untuned Model Performance - XG Boost:
+![](./img/5-conf_xgb_smote.PNG)
+
+Best Tuned Model Performance - Random Forest:
+![](./img/6-conf_fores_tuned.PNG)
 
 Finally, Machine Learning Pipelines were used to test different target variables from the data. These had mroe success than the previous, but still lacked results to make confident or impactful statements, for the time being.
 
--
 
+Best Params and Scores for "Arrested" Target:
+![](./img/8-params_ARRESTED_smote-xgb.PNG)
+
+![](./img/7-conf_ARRESTED_smote.PNG)
+
+![](./img/10-params_LEGAL-xgb.PNG)
+
+![](./img/9-conf_LEGAL.PNG)
 
 ## Conclusion
 Unfortunately, the analysis did yield the results it needed in creating classifiers to accurately predict Terry Stop Outcomes. This is likely to be caused by serveral factors:

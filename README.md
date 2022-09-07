@@ -40,11 +40,16 @@ This analysis utilizes about 52,000 data entries of Seattly Terry Stops ([from d
 
 ## Methods
 This analysis cleans null values, and adjust the data in the original csv file to be easier to use ad interpret. Then we visualize a few of the relationships between different variables.
+
 Next, the data is preprocessed, namely by creating dummy variables for the categorical data, which makes up the vast majority of it, before splitting the data into training and testing sets to run through classification algorithms. 
 Using an iterative approach, the analysis visualizes the scores of these models. The scores observed on the classifiers are particularly the Accuracy, Recall, Precision, and F1 scores with an added visualization of the Confusion Matrices for each model, so that it is easy to see the relationship between True Positives, False Positives, True Negatives, and False Negatives in each attempt.
 The Classifiers tested in this analysis are: 
+
 Logistic Regression, K Nearest Neighbors, Decision Trees, Random Forest, and XG Boost
+
+
 Each of these classifiers met varying levels of success, and the most successful subsequently had their hyperparamters tuned using GridsearchCV to find the best combination of parameters to increase F1 score, our primary metric.
+
 After iteratively attempting to increase the scores for the models, the analysis investigates new outcomes with different feature sets and new target variables, each yielding diffferent results. This was done using Machine Learning Pipelines in conjunction with GridSearchCV to streamline the selectio process
 
 
@@ -82,7 +87,9 @@ Finally, Machine Learning Pipelines were used to test different target variables
 
 ## Conclusion
 Unfortunately, the analysis did yield the results it needed in creating classifiers to accurately predict Terry Stop Outcomes. This is likely to be caused by serveral factors:
+
 -The data is incredibly varied, and does not seem to be entirely consistent. There are multiple different potential features that seem to point to a subject's arrest, and they do not give the same results. More standardized and detailed data keeping practices from seattle.gov would certainly help future investigations yield more meaningful results.
+
 -The current analysis was specifically using Classification algorithms for single, binary targets. The abundance of different types of data points to the possible need for multi-target Classifiers and deeper, more complex Machine Learning tasks.
 
 It is clear from the initial visualization of the data that there is something to be found here. Unfortunately, the current analysis shows that there will need to be more varied and in-depth attempts to ceate Machine Learning models that can help us successfully idenfity that problem.

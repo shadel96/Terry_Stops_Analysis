@@ -104,9 +104,9 @@ The full analysis can be found in three Jupyter Notebooks. The [Data Cleaning nd
 ├── data
 ├── img
 ├── README.md
+├── imports.py
 ├── new_features_and_targets.ipynb
 ├── terry_data_cleaning_analysis.ipynb
 ├── terry_models.ipynb
-├── imports.py
 ├── terry_pres.pdf
 ```

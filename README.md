@@ -4,15 +4,17 @@
 ***
 ## Overview
 
-Recent tensions in the United States have led to a mistrust of police forces across the country, particularly due to the increasing strength of movements such as Black Lives Matter, and increased cultural attention to the racial and ethnic disparity in many facets of life. There is increasing focus on the scope of what police officer's are legally able to do, and whether they use this right fairly.
+Recent tensions in the United States have led to a mistrust of police forces across the country, particularly due to the increasing strength of movements such as Black Lives Matter and increased cultural attention to the racial and ethnic disparity in many facets of life. There is increasing focus on the scope of what police officer's are legally able to do, and whether they use this right fairly.
 
-One such disparity has been observed in Terry Stops (also known as 'stop-and-frisks'), when a police officer uses theur right to legally temporarily detain a person based on 'reasonable suspsicion' that the person may be involved in criminal activity. The officer has the right to physically 'frisk' the subject, and take whatever action they feel is necessary properly handle the situation.
+One such disparity has been observed in Terry Stops (also known as 'stop-and-frisks'), when a police officer uses can legally temporarily detain a person based on 'reasonable suspicion' that the person may be involved in criminal activity. The officer has the right to physically 'frisk' the subject, and take whatever action they feel is necessary properly handle the situation.
 
-This is an indpendent preliminary investigation generally into the Seattle police department's record keeping of Terry Stops, and more specifically whether there is an identifiable connection between the identified races of the subjects and officers in question, and what the outcome of that Terry Stop is.
+The newly elected mayor of Seattle campaigned on a platform of police reform, and has hired our agency to analyze, test, and interpret the current Seattle police department's Terry Stop data, so that their selected Chief of Police can make meaningful changes to the system as it stands.
+
+***
 
 
 ## Data
-This analysis utilizes about 52,000 data entries of Seattly Terry Stops ([from data.seattle.gov](https://data.seattle.gov/Public-Safety/Terry-Stops/28ny-9ts8)), in the file [Terry_Stops.csv](./data/Terry_Stops.csv). This data has been collected from 2015 until the present, and includes the following pieces of information for each entry:
+This analysis utilizes about 52,000 data entries of Seattle Terry Stops ([from data.seattle.gov](https://data.seattle.gov/Public-Safety/Terry-Stops/28ny-9ts8)), in the file [Terry_Stops.csv](./data/Terry_Stops.csv). This data has been collected from 2015 until the present, and includes the following pieces of information for each entry:
 
 > * `Subject Age Group`: Subject Age Group (10 year increments) as reported by the officer.
 > * `Subject ID`: Key, generated daily, identifying unique subjects in the dataset using a character to character match of first name and last name. "Null" values indicate an "anonymous" or "unidentified" subject. Subjects of a Terry Stop are not required to present identification.
@@ -48,9 +50,9 @@ The Classifiers tested in this analysis are:
 Logistic Regression, K Nearest Neighbors, Decision Trees, Random Forest, and XG Boost
 
 
-Each of these classifiers met varying levels of success, and the most successful subsequently had their hyperparamters tuned using GridsearchCV to find the best combination of parameters to increase F1 score, our primary metric.
+Each of these classifiers met varying levels of success, and the most successful subsequently had their hyperparameters tuned using GridsearchCV to find the best combination of parameters to increase F1 score, our primary metric.
 
-After iteratively attempting to increase the scores for the models, the analysis investigates new outcomes with different feature sets and new target variables, each yielding diffferent results. This was done using Machine Learning Pipelines in conjunction with GridSearchCV to streamline the selectio process
+After iteratively attempting to increase the scores for the models, the analysis investigates new outcomes with different feature sets and new target variables, each yielding different results. This was done using Machine Learning Pipelines in conjunction with GridSearchCV to streamline the selection process
 
 
 ## Results
@@ -61,7 +63,7 @@ The early stages of this analysis when visualizing the data before modeling, sho
 
 ![](./img/2-graph_legal_race.PNG)
 
-Once Modeling began, howver, the initial target variable, 'Physical_Arrest', was challenging for the classification algorithms to predict with much efficiency. Nonetheless, futher steps were taken to improve these models, by attempting to tune their hyperparamaters.
+Once Modeling began, howver, the initial target variable, 'Physical_Arrest', was challenging for the classification algorithms to predict with much efficiency. Nonetheless, further steps were taken to improve these models, by attempting to tune their hyperparameters.
 
 ### Baseline Logistic Regression Model (after using SMOTE for synthetic data):
 ![](./img/3-conf_baseline_logreg_smote.PNG)
@@ -72,7 +74,7 @@ Once Modeling began, howver, the initial target variable, 'Physical_Arrest', was
 ### Best Tuned Model Performance - Random Forest:
 ![](./img/6-conf_fores_tuned.PNG)
 
-Finally, Machine Learning Pipelines were used to test different target variables from the data. These had mroe success than the previous, but still lacked results to make confident or impactful statements, for the time being.
+Finally, Machine Learning Pipelines were used to test different target variables from the data. These had more success than the previous, but still lacked results to make confident or impactful statements, for the time being.
 
 
 ### Best Params and Scores for "Arrested" Target:
@@ -86,17 +88,17 @@ Finally, Machine Learning Pipelines were used to test different target variables
 ![](./img/9-conf_LEGAL.PNG)
 
 ## Conclusion
-Unfortunately, the analysis did yield the results it needed in creating classifiers to accurately predict Terry Stop Outcomes. This is likely to be caused by serveral factors:
+Unfortunately, the analysis did yield the results it needed in creating classifiers to accurately predict Terry Stop Outcomes. This is likely to be caused by several factors:
 
 -The data is incredibly varied, and does not seem to be entirely consistent. There are multiple different potential features that seem to point to a subject's arrest, and they do not give the same results. More standardized and detailed data keeping practices from seattle.gov would certainly help future investigations yield more meaningful results.
 
 -The current analysis was specifically using Classification algorithms for single, binary targets. The abundance of different types of data points to the possible need for multi-target Classifiers and deeper, more complex Machine Learning tasks.
 
-It is clear from the initial visualization of the data that there is something to be found here. Unfortunately, the current analysis shows that there will need to be more varied and in-depth attempts to ceate Machine Learning models that can help us successfully idenfity that problem.
+It is clear from the initial visualization of the data that there is something to be found here. Unfortunately, the current analysis shows that there will need to be more varied and in-depth attempts to create Machine Learning models that can help us successfully identify that problem.
 
 
 ## More Information
-The full analysis can be found in three Jupyter Notebooks. The [Data Cleaning nd Visualization](./terry_data_cleaning_analysis.ipynb), [Data Modeling](./terry_models.ipynb), and [Additional Target and Feature Selection](./new_features_and_targets.ipynb) notebooks show each setep of the process. Further business conclusions can be found in the [presentation](./terry_pres.pdf).
+The full analysis can be found in three Jupyter Notebooks. The [Data Cleaning nd Visualization](./nb_1-terry_data_cleaning_analysis.ipynb), [Data Modeling](./nb_2-terry_models.ipynb), and [Additional Target and Feature Selection](./nb_3-new_features_and_targets.ipynb) notebooks show each step of the process. Further business conclusions can be found in the [presentation](./terry_pres.pdf).
 
 ## Repository Structure
 

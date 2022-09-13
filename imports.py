@@ -22,6 +22,8 @@ from imblearn.over_sampling import SMOTE
 import warnings
 from sklearn.exceptions import DataConversionWarning
 warnings.filterwarnings(action='ignore', category=DataConversionWarning)
+warnings.filterwarnings('ignore')
+warnings.simplefilter('ignore')
 
 
 
@@ -87,10 +89,29 @@ def clf_scores(clf,X_train, X_test,y_train, y_test, negative:str, positive:str):
     ''')
     print(classification_report(y_test, test_pred, zero_division=0, target_names=[negative, positive]))
     
-   
+    
+    
+#save scores to score dataframe 
+def save_scores(clf, X_test, y_test, score_df, name:str):
+    
+    #get scores
+    pred = clf.predict(X_test)
+    acc = accuracy_score(y_test, pred)
+    prec = precision_score(y_test, pred, zero_division=0)
+    recall = recall_score(y_test, pred)
+    f1 =f1_score(y_test, pred, zero_division=0)
+    
+    #create new df entry
+    entry = {'Name': name, 'Accuracy': acc, 'Recall': recall, 'Precision': prec, 'F1':f1}
+    print('adding: ',entry)
+    
+    #add entry to df
+    return score_df.append(entry, ignore_index = True)
+
     
 
 def plot_ROC(clf, X_test, y_test):
+    
     # Probability scores for test set
     y_score = clf.decision_function(X_test)
     # False positive rate and true positive rate

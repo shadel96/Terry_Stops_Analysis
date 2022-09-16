@@ -74,6 +74,7 @@ Once Modeling began, howver, the initial target variable, 'Physical_Arrest', was
 ### Baseline Logistic Regression Model (after using SMOTE for synthetic data):
 ![](./img/3_2-baseline_logreg_smote.PNG)
 ![](./img/3_2-baseline_logreg_smote.PNG)
+![](./img/3_3-baseline_logreg_smote_scores.PNG)
 
 ### Best Initial Model Performance - XG Boost:
 ![](./img/4_1-best_of_first_target_xgb_synth.PNG)

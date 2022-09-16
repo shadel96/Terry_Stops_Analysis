@@ -59,33 +59,42 @@ After iteratively attempting to increase the scores for the models, the analysis
 
 The early stages of this analysis when visualizing the data before modeling, show that there is in fact some sort of identifiable racial disparity in the Terry Stop data. 
 
-![](./img/1-graph_arrests_race.PNG)
+![](./img/1_1-graph_arrests_race.PNG)
 
-![](./img/2-graph_legal_race.PNG)
+![](./img/2_1-graph_legal_race.PNG)
+
+It was also observed in initial analyis that there was a very clear disparity in Terry Stops based on the race of the Subjects:
+
+![](./img/2_1-graph_total_pop.PNG)
+
+![](./img/2_2_graph_terry_stops_by_race.PNG)
 
 Once Modeling began, howver, the initial target variable, 'Physical_Arrest', was challenging for the classification algorithms to predict with much efficiency. Nonetheless, further steps were taken to improve these models, by attempting to tune their hyperparameters.
 
 ### Baseline Logistic Regression Model (after using SMOTE for synthetic data):
-![](./img/3-conf_baseline_logreg_smote.PNG)
+![](./img/3_2-baseline_logreg_smote.PNG)
+![](./img/3_2-baseline_logreg_smote.PNG)
 
-### Best Untuned Model Performance - XG Boost:
-![](./img/5-conf_xgb_smote.PNG)
+### Best Initial Model Performance - XG Boost:
+![](./img/4_1-best_of_first_target_xgb_synth.PNG)
+![](./img/4_2-xgb_synth_scores.PNG)
 
-### Best Tuned Model Performance - Random Forest:
-![](./img/6-conf_fores_tuned.PNG)
+![](./img/5-initial_comparison.PNG)
 
-Finally, Machine Learning Pipelines were used to test different target variables from the data. These had more success than the previous, but still lacked results to make confident or impactful statements, for the time being.
+Then, Machine Learning Pipelines were used to test different target variables from the data. These had more success than the previous, but still lacked results to make confident or impactful statements, for the time being.
 
 
 ### Best Params and Scores for "Arrested" Target:
-![](./img/8-params_ARRESTED_smote-xgb.PNG)
-
-![](./img/7-conf_ARRESTED_smote.PNG)
+![](./img/7_1-best_arrested_arrestedsmotecv.PNG)
+![](./img/7_2-best_arrested_scores.PNG)
 
 ### Best Params and Scores for "Legal Action Taken" Target:
-![](./img/10-params_LEGAL-xgb.PNG)
+![](./img/8_1-best_legal_legalcv.PNG)
+![](./img/8_2-best_legal_scores.PNG)
 
-![](./img/9-conf_LEGAL.PNG)
+### Final Model Comparison
+![](./img/10-final_best_scores.PNG)
+
 
 ## Conclusion
 Unfortunately, the analysis did yield the results it needed in creating classifiers to accurately predict Terry Stop Outcomes. This is likely to be caused by several factors:
@@ -94,7 +103,9 @@ Unfortunately, the analysis did yield the results it needed in creating classifi
 
 -The current analysis was specifically using Classification algorithms for single, binary targets. The abundance of different types of data points to the possible need for multi-target Classifiers and deeper, more complex Machine Learning tasks.
 
-It is clear from the initial visualization of the data that there is something to be found here. Unfortunately, the current analysis shows that there will need to be more varied and in-depth attempts to create Machine Learning models that can help us successfully identify that problem.
+-It is clear from the initial visualization of the data that there is something to be found here. Unfortunately, the current analysis shows that there will need to be more varied and in-depth attempts to create Machine Learning models that can help us successfully identify that problem.
+
+-Future investigations could be potentially directed at the performance of individual officers within the Seattle Police Department, or perhaps aimed at individual regions of Seattle that face higher disparity in Terry Stops.
 
 
 ## More Information

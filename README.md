@@ -118,8 +118,8 @@ The full analysis can be found in three Jupyter Notebooks. The [Data Cleaning nd
 ├── img
 ├── README.md
 ├── imports.py
-├── new_features_and_targets.ipynb
-├── terry_data_cleaning_analysis.ipynb
-├── terry_models.ipynb
+├── nb_1-terry_data_cleaning_analysis.ipynb
+├── nb_2-terry_models.ipynb
+├── nb_3-new_features_and_targets.ipynb
 ├── terry_pres.pdf
 ```

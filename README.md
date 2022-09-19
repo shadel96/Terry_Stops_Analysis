@@ -63,9 +63,9 @@ The early stages of this analysis when visualizing the data before modeling, sho
 
 It was also observed in initial analyis that there was a very clear disparity in Terry Stops based on the race of the Subjects:
 
-![](./img/pop_vs_stops_etc.PNG)
+![](./img/pop_vs_stops_etc.png)
 
-![](./img/percent_of_race_stops.PNG)
+![](./img/percent_of_race_stops.png)
 
 Once Modeling began, howver, the initial target variable, 'Physical_Arrest', was challenging for the classification algorithms to predict with much efficiency. Nonetheless, further steps were taken to improve these models, by attempting to tune their hyperparameters.
 

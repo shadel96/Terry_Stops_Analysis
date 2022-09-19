@@ -57,17 +57,15 @@ After iteratively attempting to increase the scores for the models, the analysis
 
 ## Results
 
-The early stages of this analysis when visualizing the data before modeling, show that there is in fact some sort of identifiable racial disparity in the Terry Stop data. 
+The early stages of this analysis when visualizing the data before modeling, show general numbers of terry stops and their outcomes in the data. 
 
-![](./img/1_1-graph_arrests_race.PNG)
-
-![](./img/2_1-graph_legal_race.PNG)
+![](./img/stop_outcome_by_race.PNG)
 
 It was also observed in initial analyis that there was a very clear disparity in Terry Stops based on the race of the Subjects:
 
-![](./img/2_1-graph_total_pop.PNG)
+![](./img/pop_vs_stops_etc.PNG)
 
-![](./img/2_2_graph_terry_stops_by_race.PNG)
+![](./img/percent_of_race_stops.PNG)
 
 Once Modeling began, howver, the initial target variable, 'Physical_Arrest', was challenging for the classification algorithms to predict with much efficiency. Nonetheless, further steps were taken to improve these models, by attempting to tune their hyperparameters.
 
